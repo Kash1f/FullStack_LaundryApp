@@ -17,7 +17,7 @@ const HomeScreen = () => {
   const checkIfLocationEnabled = async () =>{
       let enabled = await Location.hasServicesEnabledAsync
       if(!enabled){
-        Alert.alert('Alert Title', 'Location Services are not enabled', [
+        Alert.alert('Location Services are not enabled', 'Please enable the location services', [
           {
             text: 'Cancel',
             onPress: () => console.log('Cancel Pressed'),
@@ -26,7 +26,37 @@ const HomeScreen = () => {
           {text: 'OK', onPress: () => console.log('OK Pressed')},
         ],
         {cancelable: false}
-        );
+        )
+      }
+      else{
+          setlocationServicesEnabled(enabled)
+      }
+  }
+
+  const getCurrentLocation = () => {
+      let {status} = await Location.requestForegroundPermissionsAsync();
+
+      if (status !== granted){
+        Alert.alert('Permission denied', 'Allow the app to use the location services', [
+          {
+            text: 'Cancel',
+            onPress: () => console.log('Cancel Pressed'),
+            style: 'cancel',
+          },
+          {text: 'OK', onPress: () => console.log('OK Pressed')},
+        ],
+        {cancelable: false}
+        )
+      };
+
+      //we are gonna get the coordinates once the permission is granted
+      const {coordinates} = await Location.getCurrentPositionAsync(); //lg, lt of particular user
+
+      if(coordinates){
+        const {latitude, longitude} = coords;
+
+        //after getting the latitude and longitude we will to apply the reverse geocode method on the lat and long to get the exact location
+
 
       }
   }
