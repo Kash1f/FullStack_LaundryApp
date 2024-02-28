@@ -83,7 +83,9 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaView>
-      <View style={{ marginTop: 40 , flexDirection:'row', alignItems: "center" }}>
+
+      {/* Location and Profile */}
+      <View style={{ marginTop: 40 , flexDirection:'row', alignItems: "center", padding:10 }}>
         <MaterialIcons name="location-on" size={30} color="#fd5c63" />
         <View>
           <Text style={{ fontSize: 18, fontWeight: "600" }}>Home</Text>
@@ -95,12 +97,17 @@ const HomeScreen = () => {
 
       <Pressable style={{marginLeft: "auto",marginRight:7 }}>
 
-    <Image style={{width:50, height:50, borderRadius: 25 }} source={{uri:"https://lh3.googleusercontent.com/ogw/AAEL6sh_yqHq38z35QMy5Fnb8ZIxicdxCIVM9PeBD2j-=s64-c-mo"}}/>
+    <Image style={{width:40, height:40, borderRadius: 20 }} source={{uri:"https://lh3.googleusercontent.com/ogw/AAEL6sh_yqHq38z35QMy5Fnb8ZIxicdxCIVM9PeBD2j-=s64-c-mo"}}/>
 
       </Pressable>
-
-
       </View>
+
+        {/* SearchBar */}
+
+        <View>
+          
+        </View>
+
     </SafeAreaView>
   );
 };
