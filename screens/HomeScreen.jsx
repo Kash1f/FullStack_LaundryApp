@@ -12,6 +12,7 @@ import { Feather } from "@expo/vector-icons";
 import * as Location from "expo-location";
 import { MaterialIcons } from "@expo/vector-icons";
 import { SliderBox } from "react-native-image-slider-box";
+import Carousel from "../components/Carousel";
 
 const HomeScreen = () => {
   const [displayCurrentAddress, setdisplayCurrentAddress] = useState(
@@ -137,6 +138,11 @@ const HomeScreen = () => {
         <TextInput placeholder="Search for items or more" />
         <Feather name="search" size={24} color="#fd5c63" />
       </View>
+
+          {/* Image Carousel */}
+
+        <Carousel/>
+
     </SafeAreaView>
   );
 };
