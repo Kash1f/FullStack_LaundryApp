@@ -1,7 +1,17 @@
-import { Text, View, Alert, SafeAreaView, Pressable, Image} from "react-native";
+import {
+  Text,
+  View,
+  Alert,
+  SafeAreaView,
+  Pressable,
+  Image,
+  TextInput,
+} from "react-native";
 import React, { useEffect, useState } from "react";
+import { Feather } from "@expo/vector-icons";
 import * as Location from "expo-location";
 import { MaterialIcons } from "@expo/vector-icons";
+import { SliderBox } from "react-native-image-slider-box";
 
 const HomeScreen = () => {
   const [displayCurrentAddress, setdisplayCurrentAddress] = useState(
@@ -83,31 +93,50 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaView>
-
       {/* Location and Profile */}
-      <View style={{ marginTop: 40 , flexDirection:'row', alignItems: "center", padding:10 }}>
+      <View
+        style={{
+          marginTop: 40,
+          flexDirection: "row",
+          alignItems: "center",
+          padding: 10,
+        }}
+      >
         <MaterialIcons name="location-on" size={30} color="#fd5c63" />
         <View>
           <Text style={{ fontSize: 18, fontWeight: "600" }}>Home</Text>
           <Text>{displayCurrentAddress}</Text>
         </View>
 
-
         {/* creating our own profile so that we can navigate to the next screen to show the signIn/out button and your user loginID */}
 
-      <Pressable style={{marginLeft: "auto",marginRight:7 }}>
-
-    <Image style={{width:40, height:40, borderRadius: 20 }} source={{uri:"https://lh3.googleusercontent.com/ogw/AAEL6sh_yqHq38z35QMy5Fnb8ZIxicdxCIVM9PeBD2j-=s64-c-mo"}}/>
-
-      </Pressable>
+        <Pressable style={{ marginLeft: "auto", marginRight: 7 }}>
+          <Image
+            style={{ width: 40, height: 40, borderRadius: 20 }}
+            source={{
+              uri: "https://lh3.googleusercontent.com/ogw/AAEL6sh_yqHq38z35QMy5Fnb8ZIxicdxCIVM9PeBD2j-=s64-c-mo",
+            }}
+          />
+        </Pressable>
       </View>
 
-        {/* SearchBar */}
+      {/* SearchBar */}
 
-        <View>
-          
-        </View>
-
+      <View
+        style={{
+          padding: 10,
+          margin: 10,
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+          borderWidth:1,
+          borderRadius:10,
+          borderColor: "#C0C0C0"
+        }}
+      >
+        <TextInput placeholder="Search for items or more" />
+        <Feather name="search" size={24} color="#fd5c63" />
+      </View>
     </SafeAreaView>
   );
 };
