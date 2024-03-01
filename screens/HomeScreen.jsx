@@ -13,6 +13,7 @@ import * as Location from "expo-location";
 import { MaterialIcons } from "@expo/vector-icons";
 import { SliderBox } from "react-native-image-slider-box";
 import Carousel from "../components/Carousel";
+import Services from "../components/Services";
 
 const HomeScreen = () => {
   const [displayCurrentAddress, setdisplayCurrentAddress] = useState(
@@ -93,7 +94,7 @@ const HomeScreen = () => {
   };
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor:"#F0F0F0"}}>
       {/* Location and Profile */}
       <View
         style={{
@@ -142,6 +143,9 @@ const HomeScreen = () => {
           {/* Image Carousel */}
 
         <Carousel/>
+
+        {/* Services Component */}
+        <Services/>
 
     </SafeAreaView>
   );

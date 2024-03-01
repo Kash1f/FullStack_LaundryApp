@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, ScrollView, StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 
 const Services = () => {
@@ -26,8 +26,22 @@ const Services = () => {
   ];
 
   return (
-    <View>
-      <Text>Services</Text>
+    <View style={{padding:10}}>
+      <Text>Services Available</Text>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+
+     {services.map((service,index)=>(
+          <Pressable style={{margin:10, backgroundColor:"white", padding:20, borderRadius:8}} key={index}>
+            <Image source={{uri:service.image}} style={{width:70, height:70,}}/>
+
+            <Text>
+              {service.name}
+            </Text>
+
+          </Pressable>
+     ))}
+
+      </ScrollView>
     </View>
   );
 };
