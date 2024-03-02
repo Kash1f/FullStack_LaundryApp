@@ -13,11 +13,11 @@ const DressItems = ({ item }) => {
         </View>
 
         <View>
-          <Text>{item.name}</Text>
-          <Text>{item.price}</Text>
+          <Text style={{width:80,fontSize:16,fontWeight:"500",marginBottom:16}}>{item.name}</Text>
+          <Text style={{width:58,color:"black", fontWeight:"bold"}}>{item.price}</Text>
         </View>
 
-        <Pressable style={{ width: 80 }}>
+        <Pressable style={{ width: 80}}>
           <Text
             style={styles.secondPressable}>
             Add
@@ -47,5 +47,8 @@ const styles = StyleSheet.create({
     color: "#088F8F",
     textAlign: "center",
     padding: 5,
+    borderRadius:4,
+    fontSize: 17,
+    fontWeight:"bold"
   },
 });
