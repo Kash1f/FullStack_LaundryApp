@@ -14,6 +14,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { SliderBox } from "react-native-image-slider-box";
 import Carousel from "../components/Carousel";
 import Services from "../components/Services";
+import DressItems from "../components/DressItems";
 
 const HomeScreen = () => {
   const [displayCurrentAddress, setdisplayCurrentAddress] = useState(
@@ -200,7 +201,14 @@ const HomeScreen = () => {
         
         {/* Render all the Products */}
 
-        {services.map((item,index)(
+        {/* we will render a new component */}
+
+        {services.map((item,index)=>(
+
+        // for each & every item in the services array we will render the dress comp
+          <DressItems item={item} key={index}/> //for each item, a new comp is being rendered i.e this item
+
+
 
         ))}
     </ScrollView>
