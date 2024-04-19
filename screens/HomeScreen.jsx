@@ -15,8 +15,12 @@ import { SliderBox } from "react-native-image-slider-box";
 import Carousel from "../components/Carousel";
 import Services from "../components/Services";
 import DressItems from "../components/DressItems";
+import { useSelector } from "react-redux";
 
 const HomeScreen = () => {
+
+  const cart = useSelector((state)=>state.cart.cart)   //1:07:20
+
   const [displayCurrentAddress, setdisplayCurrentAddress] = useState(
     "We are loading your location"
   );

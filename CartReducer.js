@@ -54,7 +54,9 @@ export const CartSlice = createSlice({
 
 })
 
+export const {addToCart, removeFromCart, incrementQuantity, decrementQuantity} = CartSlice.actions;
 
+export default CartSlice.reducer;
 
 
 //if the user presses on the addtocart button for the first time
