@@ -12,7 +12,6 @@ import { decrementQty, incrementQty } from "../ProductReducer";
 const DressItems = ({ item }) => {
 
   const dispatch = useDispatch();
-
   const cart = useSelector((state) => state.cart.cart);
   const addItemToCart = () => {
     dispatch(addToCart(item)); // cart
