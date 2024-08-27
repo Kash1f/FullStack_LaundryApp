@@ -213,8 +213,7 @@ import { useNavigation } from "@react-navigation/native";
             borderWidth:1,
             borderRadius:10,
             borderColor: "#C0C0C0"
-          }}
-        >
+          }}>
           <TextInput placeholder="Search for items or more" />
           <Feather name="search" size={24} color="#fd5c63" />
         </View>
