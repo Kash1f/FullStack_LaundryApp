@@ -32,6 +32,4 @@ export default productSlice.reducer;
 
 
 
-
-
 //We need to implement the cart system in such a way that if in case I increment the quantity inside the cart screen so the same quantity should be reflected for that particular product inside my homescreen as well.
