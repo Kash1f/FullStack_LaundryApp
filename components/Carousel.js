@@ -20,8 +20,6 @@ const Carousel = () => {
       image:
         "https://images.pexels.com/photos/5591581/pexels-photo-5591581.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
-
-    ,
   ];
 
   return (
@@ -30,8 +28,8 @@ const Carousel = () => {
         {images.map((image, index) => (
           <Pressable
             style={{ marginHorizontal: 5, backgroundColor: "white" }}
-            key={index}
-          >
+            key={index}>
+              
             <Image
               source={{ uri: image.image }}
               style={{ width: 350, height: 200, borderRadius: 8 }}
@@ -45,4 +43,4 @@ const Carousel = () => {
 
 export default Carousel;
 
-const styles = StyleSheet.create({});
+
