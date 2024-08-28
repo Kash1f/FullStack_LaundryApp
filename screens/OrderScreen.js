@@ -16,7 +16,7 @@ const OrderScreen = () => {
         }}
         autoPlay
         loop={false}
-        speed={0.7}
+        speed={0.8}
       />
 
       <Text
@@ -41,12 +41,10 @@ const OrderScreen = () => {
         }}
         autoPlay
         loop={false}
-        speed={0.7}
+        speed={0.8}
       />
     </SafeAreaView>
   );
 };
 
 export default OrderScreen;
-
-const styles = StyleSheet.create({});
