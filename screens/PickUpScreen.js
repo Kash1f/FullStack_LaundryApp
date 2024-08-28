@@ -131,8 +131,7 @@ const PickUpScreen = () => {
           unselectedItemTextStyle={styles.selectedItemTextStyle}
           selectedItemBackgroundColor="#222831"
           unselectedItemBackgroundColor="#ececec"
-          flatListContainerStyle={styles.flatListContainerStyle}
-        />
+          flatListContainerStyle={styles.flatListContainerStyle}/>
 
         <Text style={{ fontSize: 16, fontWeight: "500", marginHorizontal: 10 }}>
           Select Time
@@ -159,8 +158,7 @@ const PickUpScreen = () => {
                       borderColor: "gray",
                       borderWidth: 0.7,
                     }
-              }
-            >
+              }>
               <Text>{item.time}</Text>
             </Pressable>
           ))}
@@ -172,26 +170,10 @@ const PickUpScreen = () => {
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {deliveryTime.map((item, i) => (
             <Pressable
-              style={
-                delivery.includes(item.name)
-                  ? {
-                      margin: 10,
-                      borderRadius: 7,
-                      padding: 15,
-                      borderColor: "red",
-                      borderWidth: 0.7,
-                    }
-                  : {
-                      margin: 10,
-                      borderRadius: 7,
-                      padding: 15,
-                      borderColor: "gray",
-                      borderWidth: 0.7,
-                    }
-              }
+          style={ delivery.includes(item.name) ? {margin: 10, borderRadius: 7, padding: 15, borderColor: "red", borderWidth: 0.7,} : 
+           {margin: 10, borderRadius: 7, padding: 15, borderColor: "gray", borderWidth: 0.7}}
               onPress={() => setDelivery(item.name)}
-              key={i}
-            >
+              key={i}>
               <Text>{item.name}</Text>
             </Pressable>
           ))}
