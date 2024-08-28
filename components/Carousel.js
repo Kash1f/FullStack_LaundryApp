@@ -2,8 +2,6 @@ import {
   Image,
   Pressable,
   ScrollView,
-  StyleSheet,
-  Text,
   View,
 } from "react-native";
 import React from "react";
@@ -29,11 +27,10 @@ const Carousel = () => {
           <Pressable
             style={{ marginHorizontal: 5, backgroundColor: "white" }}
             key={index}>
-              
+
             <Image
               source={{ uri: image.image }}
-              style={{ width: 350, height: 200, borderRadius: 8 }}
-            />
+              style={{ width: 350, height: 200, borderRadius: 8 }}/>
           </Pressable>
         ))}
       </ScrollView>
