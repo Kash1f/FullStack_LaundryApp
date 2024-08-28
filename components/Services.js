@@ -16,7 +16,7 @@ const Services = () => {
     {
       id: "12",
       image: "https://cdn-icons-png.flaticon.com/128/9753/9753675.png",
-      name: "Wash & Iron",
+      name: "Ironing",
     },
     {
       id: "13",
