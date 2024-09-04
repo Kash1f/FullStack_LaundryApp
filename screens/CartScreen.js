@@ -246,9 +246,8 @@ const CartScreen = () => {
                 }}
               >
                 <Text
-                  style={{ fontSize: 18, fontWeight: "500", color: "gray" }}
-                >
-                  No Of Days
+                  style={{ fontSize: 18, fontWeight: "500", color: "gray" }}>
+                  No of Days
                 </Text>
 
                 <Text
@@ -256,8 +255,7 @@ const CartScreen = () => {
                     fontSize: 18,
                     fontWeight: "400",
                     color: "#088F8F",
-                  }}
-                >
+                  }}>
                   {route.params.no_Of_days}
                 </Text>
               </View>
@@ -271,8 +269,7 @@ const CartScreen = () => {
                 }}
               >
                 <Text
-                  style={{ fontSize: 18, fontWeight: "500", color: "gray" }}
-                >
+                  style={{ fontSize: 18, fontWeight: "500", color: "gray" }}>
                   Selected Pick Up Time
                 </Text>
 
@@ -292,8 +289,7 @@ const CartScreen = () => {
                   height: 1,
                   borderWidth: 0.5,
                   marginTop: 10,
-                }}
-              />
+                }}/>
 
               <View
                 style={{
@@ -301,8 +297,7 @@ const CartScreen = () => {
                   alignItems: "center",
                   justifyContent: "space-between",
                   marginVertical: 8,
-                }}
-              >
+                }}>
                 <Text style={{ fontSize: 18, fontWeight: "bold" }}>
                   To Pay
                 </Text>
