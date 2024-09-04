@@ -16,9 +16,8 @@ import { decrementQty, incrementQty } from "../ProductReducer";
 const CartScreen = () => {
     const cart = useSelector((state) => state.cart.cart);
     const route = useRoute();
-    const total = cart
-      .map((item) => item.quantity * item.price)
-      .reduce((curr, prev) => curr + prev, 0);
+
+    const total = cart.map((item) => item.quantity * item.price).reduce((curr, prev) => curr + prev, 0);
     const navigation = useNavigation();
    
     const dispatch = useDispatch();
@@ -199,8 +198,7 @@ const CartScreen = () => {
 
               <View style={{ flexDirection: "row", alignItems: "center" }}>
                 <Text
-                  style={{ fontSize: 18, fontWeight: "500", color: "gray" }}
-                >
+                  style={{ fontSize: 18, fontWeight: "500", color: "gray" }}>
                   Free Delivery on this Order
                 </Text>
               </View>
