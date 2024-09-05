@@ -17,7 +17,6 @@ const StackNavigator = () => {
         <Stack.Screen name="PickUp" component={PickUpScreen} options={{headerShown:false}} />
         <Stack.Screen name="Cart" component={CartScreen} options={{headerShown:false}} />
         <Stack.Screen name="Profile" component={ProfileScreen} options={{headerShown:false}} />
-
       </Stack.Navigator>
     </NavigationContainer>
   );
