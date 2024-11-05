@@ -6,7 +6,7 @@ import {
   TextInput,
   Pressable,
   ScrollView,
-  Alert
+  Alert,
 } from "react-native";
 import React, { useState } from "react";
 import HorizontalDatepicker from "@awrminkhodaei/react-native-horizontal-datepicker";
@@ -72,35 +72,41 @@ const PickUpScreen = () => {
   ];
   const navigation = useNavigation();
   const proceedToCart = () => {
-      if(!selectedDate || !selectedTime || !delivery){
-        Alert.alert(
-            "Empty or invalid",
-            "Please select all the fields",
-            [
-              {
-                text: "Cancel",
-                onPress: () => console.log("Cancel Pressed"),
-                style: "cancel"
-              },
-              { text: "OK", onPress: () => console.log("OK Pressed") }
-            ],
-            { cancelable: false }
-          );
-      }
-      if(selectedDate && selectedTime && delivery){
-        navigation.replace("Cart",{
-            pickUpDate:selectedDate,
-            selectedTime:selectedTime,
-            no_Of_days:delivery,
-
-        })
-      }
-  }
+    if (!selectedDate || !selectedTime || !delivery) {
+      Alert.alert(
+        "Empty or invalid",
+        "Please select all the fields",
+        [
+          {
+            text: "Cancel",
+            onPress: () => console.log("Cancel Pressed"),
+            style: "cancel",
+          },
+          { text: "OK", onPress: () => console.log("OK Pressed") },
+        ],
+        { cancelable: false }
+      );
+    }
+    if (selectedDate && selectedTime && delivery) {
+      navigation.replace("Cart", {
+        pickUpDate: selectedDate,
+        selectedTime: selectedTime,
+        no_Of_days: delivery,
+      });
+    }
+  };
 
   return (
     <>
       <SafeAreaView>
-        <Text style={{ fontSize: 16, fontWeight: "500", marginHorizontal: 10, marginTop:25 }}>
+        <Text
+          style={{
+            fontSize: 16,
+            fontWeight: "500",
+            marginHorizontal: 10,
+            marginTop: 25,
+          }}
+        >
           Enter Your Address
         </Text>
         <TextInput
@@ -131,7 +137,8 @@ const PickUpScreen = () => {
           unselectedItemTextStyle={styles.selectedItemTextStyle}
           selectedItemBackgroundColor="#222831"
           unselectedItemBackgroundColor="#ececec"
-          flatListContainerStyle={styles.flatListContainerStyle}/>
+          flatListContainerStyle={styles.flatListContainerStyle}
+        />
 
         <Text style={{ fontSize: 16, fontWeight: "500", marginHorizontal: 10 }}>
           Select Time
@@ -158,7 +165,8 @@ const PickUpScreen = () => {
                       borderColor: "gray",
                       borderWidth: 0.7,
                     }
-              }>
+              }
+            >
               <Text>{item.time}</Text>
             </Pressable>
           ))}
@@ -170,10 +178,26 @@ const PickUpScreen = () => {
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {deliveryTime.map((item, i) => (
             <Pressable
-          style={ delivery.includes(item.name) ? {margin: 10, borderRadius: 7, padding: 15, borderColor: "red", borderWidth: 0.7,} : 
-           {margin: 10, borderRadius: 7, padding: 15, borderColor: "gray", borderWidth: 0.7}}
+              style={
+                delivery.includes(item.name)
+                  ? {
+                      margin: 10,
+                      borderRadius: 7,
+                      padding: 15,
+                      borderColor: "red",
+                      borderWidth: 0.7,
+                    }
+                  : {
+                      margin: 10,
+                      borderRadius: 7,
+                      padding: 15,
+                      borderColor: "gray",
+                      borderWidth: 0.7,
+                    }
+              }
               onPress={() => setDelivery(item.name)}
-              key={i}>
+              key={i}
+            >
               <Text>{item.name}</Text>
             </Pressable>
           ))}
@@ -184,7 +208,7 @@ const PickUpScreen = () => {
         <Pressable
           style={{
             backgroundColor: "#088F8F",
-            marginTop:"auto",
+            marginTop: "auto",
             padding: 10,
             marginBottom: 40,
             margin: 15,
